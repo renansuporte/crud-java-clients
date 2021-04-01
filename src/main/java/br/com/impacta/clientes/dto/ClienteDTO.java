@@ -1,6 +1,7 @@
 package br.com.impacta.clientes.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
 
@@ -12,6 +13,7 @@ public class ClienteDTO {
     @JsonProperty("nome")
     private String nome;
 
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     @JsonProperty("data_nascimento")
     private LocalDate dataNascimento;
 
