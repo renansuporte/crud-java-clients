@@ -1,22 +1,24 @@
 package br.com.impacta.clientes.entity;
 
+import java.time.LocalDateTime;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import java.time.LocalDate;
 
 @Entity
 @Table(name = "tb_cliente")
 public class ClienteEntity {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String nome;
 
-    private LocalDate dataNascimento;
+    private LocalDateTime dataNascimento;
 
     public Long getId() {
         return id;
@@ -34,11 +36,11 @@ public class ClienteEntity {
         this.nome = nome;
     }
 
-    public LocalDate getDataNascimento() {
+    public LocalDateTime getDataNascimento() {
         return dataNascimento;
     }
 
-    public void setDataNascimento(LocalDate dataNascimento) {
+    public void setDataNascimento(LocalDateTime dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
 }

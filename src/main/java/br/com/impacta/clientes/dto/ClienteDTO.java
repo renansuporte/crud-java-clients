@@ -1,43 +1,53 @@
 package br.com.impacta.clientes.dto;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.time.LocalDateTime;
+
 import org.springframework.format.annotation.DateTimeFormat;
 
-import java.time.LocalDate;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class ClienteDTO {
 
-    @JsonProperty("id")
-    private Long id;
+	@JsonProperty("id")
+	private Long id;
 
-    @JsonProperty("nome")
-    private String nome;
+	@JsonProperty("nome")
+	private String nome;
 
-    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
-    @JsonProperty("data_nascimento")
-    private LocalDate dataNascimento;
+	@DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+	@JsonProperty("data_nascimento")
+	private LocalDateTime dataNascimento;
 
-    public Long getId() {
-        return id;
-    }
+	public ClienteDTO() {
+	}
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+	public ClienteDTO(Long id, String nome, LocalDateTime dataNascimento) {
+		this.id = id;
+		this.nome = nome;
+		this.dataNascimento = dataNascimento;
+	}
 
-    public String getNome() {
-        return nome;
-    }
+	public Long getId() {
+		return id;
+	}
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
+	public void setId(Long id) {
+		this.id = id;
+	}
 
-    public LocalDate getDataNascimento() {
-        return dataNascimento;
-    }
+	public String getNome() {
+		return nome;
+	}
 
-    public void setDataNascimento(LocalDate dataNascimento) {
-        this.dataNascimento = dataNascimento;
-    }
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public LocalDateTime getDataNascimento() {
+		return dataNascimento;
+	}
+
+	public void setDataNascimento(LocalDateTime dataNascimento) {
+		this.dataNascimento = dataNascimento;
+	}
 }
