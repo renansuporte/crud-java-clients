@@ -1,1 +1,1 @@
-# cliente-api
+# Microservice para operação de CRUD. Insere clientes.
